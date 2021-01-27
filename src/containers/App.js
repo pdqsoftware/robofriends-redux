@@ -4,8 +4,6 @@ import SearchBox from '../components/SearchBox'
 import Scroll from '../components/Scroll'
 import ErrorBoundary from '../components/ErrorBoundary'
 
-// import { robots } from './robots';
-
 class App extends React.Component {
     constructor() {
         super()
@@ -13,8 +11,6 @@ class App extends React.Component {
             robots: [],
             searchText: ''
         }
-
-        // this.handleSearchTextChange = this.handleSearchTextChange.bind(this)
     }
 
     componentDidMount() {
@@ -31,11 +27,6 @@ class App extends React.Component {
 
     handleSearchTextChange = (event) => {
         this.setState(() => ({ searchText: event.target.value}))
-        // const filteredRobots = this.state.robots.filter((robot) => {
-        //     return robot.name.toLowerCase().includes(event.target.value.toLowerCase())
-        // })
-            
-        // console.log(filteredRobots)
     }
 
     render () {
@@ -49,7 +40,7 @@ class App extends React.Component {
         } else {
             return (
                 <div className='tc'>
-                    <h1 className='f1'>RoboFriends</h1>
+                    <h1 className='f1'>RoboFriends - Redux version</h1>
                     <SearchBox searchChange = { this.handleSearchTextChange } />
                     <Scroll>
                         <ErrorBoundary>
