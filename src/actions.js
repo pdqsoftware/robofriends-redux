@@ -5,6 +5,8 @@ import  {
     REQUEST_ROBOTS_FAILED
 } from './constants'
 
+
+// This is an action - which sends 'text' to the reducer
 export const setSearchText = (text) => ({
     type: CHANGE_SEARCH_TEXT,
     payload: text

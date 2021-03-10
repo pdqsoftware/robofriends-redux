@@ -11,6 +11,7 @@ const initialState = {
 }
 
 // This is the reducer function - called searchRobots - which is what it does!
+// Remember to include a default in the switch to just return the unaltered state
 export const searchRobots = (state = initialState, action = {}) => {
     // console.log(`action.type: ${action}.type`)
     const actionType = action.type
@@ -18,7 +19,9 @@ export const searchRobots = (state = initialState, action = {}) => {
 
     switch(action.type) {
         case CHANGE_SEARCH_TEXT:
-            return Object.assign({}, state, { searchText: action.payload })
+            // The state is read-only so return a new complete state that includes the required modification to searchtext
+            // return Object.assign({}, state, { searchText: action.payload })
+            return { ...state, searchText: action.payload }
         default:
             console.log('default case selected!')
             return state
